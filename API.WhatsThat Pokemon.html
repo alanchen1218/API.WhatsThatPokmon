@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API.Pokemon</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			function pokemon(){
+				for(var i=1; i<=151; i++){
+					console.log(i);	//making sure the for loop is working
+					var x = ("https://pokeapi.co/media/img/"+i+".png");
+					$('.container').append('<img src=' + x + '>');		
+				}
+			}
+			pokemon();
+
+			// $('img').click(function(){
+			// 	$(this).append($('img')
+			// });
+			
+			// $('img').click(function(){
+			// 	$(this).fadeOut('slow');
+
+			$(document).on('click', 'img' , function(){
+				$('.info').append('img');
+			});
+
+		});			
+	</script>
+	<div class="container"></div>
+	<div class="info"></div>
+</body>
+</html>
